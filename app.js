@@ -43,8 +43,8 @@ function open_(g){S.g=g;S.tab='ov';S.from=S.to=S.wq=S.lq=S.lsel='';S.pr='all';S.
 /* render */
 function render(){
  CH.forEach(c=>c.destroy());CH=[];
- const C=calc(),g=G[S.g],D=data[S.g];
- $('#ht').textContent='لوحة '+g.t;$('#hs').textContent='أهلاً يا '+S.name+(S.src[S.g]?' · من ملف مرفوع':'');
+ $('#flt').hidden=S.tab==='en';const C=calc(),g=G[S.g],D=data[S.g];
+ $('#ht').textContent='لوحة '+g.t;$('#hs').textContent='أهلاً يا '+S.name+(S.src[S.g]?' · بيانات محفوظة':'');
  document.querySelectorAll('#flt [data-a=pr]').forEach(b=>b.classList.toggle('on',b.dataset.k===S.pr));
  document.querySelectorAll('#nv button').forEach(b=>b.classList.toggle('on',b.dataset.t===S.tab));
  $('#dr').hidden=S.pr!=='c';$('#df').value=S.from;$('#dt').value=S.to;
@@ -52,8 +52,8 @@ function render(){
  if(dates.length){$('#df').min=$('#dt').min=dates[0];$('#df').max=$('#dt').max=dates.at(-1)}
  $('#rng').textContent=dates.length?(S.from||S.to?'الفترة: '+dd(S.from||dates[0])+' إلى '+dd(S.to||dates.at(-1)):'كل التواريخ المسجلة · '+dd(dates[0])+' إلى '+dd(dates.at(-1))):'';
  const v=$('#vw');
- if(!C.s.length&&!C.p.length){v.innerHTML='<div class="glass sec empty">مفيش بيانات في الفترة دي.<br>اختار «كل الفترة» أو غيّر التواريخ.</div>';return}
- if(S.tab==='ov')ov(v,C);else if(S.tab==='wk'){wkShell(v,C);wkList(C)}else if(S.tab==='fc')fc(v,C);else lgShell(v,C);
+ if(S.tab!=='en'&&!C.s.length&&!C.p.length){v.innerHTML='<div class="glass sec empty">مفيش بيانات في الفترة دي.<br>اختار «كل الفترة» أو غيّر التواريخ.</div>';return}
+ if(S.tab==='ov')ov(v,C);else if(S.tab==='wk'){wkShell(v,C);wkList(C)}else if(S.tab==='fc')fc(v,C);else if(S.tab==='en')en(v,C);else lgShell(v,C);
 }
 
 /* overview */

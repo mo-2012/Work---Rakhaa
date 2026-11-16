@@ -85,7 +85,7 @@ small{color:var(--mut)}
 #mn{padding:10px 0 calc(112px + env(safe-area-inset-bottom,0px))}
 /* tab bar */
 #nv{position:fixed;left:0;right:0;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:12;display:flex;justify-content:center;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));pointer-events:none}
-#nv .tabs{pointer-events:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;padding:6px;border-radius:999px;width:100%;max-width:440px}
+#nv .tabs{pointer-events:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:2px;padding:6px;border-radius:999px;width:100%;max-width:520px}
 #nv button{height:56px;border-radius:999px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;font-size:11.5px;color:var(--mut)}
 #nv button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 #nv button.on{color:var(--acc);background:color-mix(in srgb,var(--acc) 14%,var(--glass2));font-weight:700;box-shadow:inset 0 1px 0 var(--shine)}
@@ -181,3 +181,7 @@ small{color:var(--mut)}
  @keyframes fade{from{opacity:0}}}
 @media(prefers-reduced-transparency:reduce){
  .glass,.field,.ib,.sheet,body::before,#toast span{background:var(--surf);-webkit-backdrop-filter:none;backdrop-filter:none}}
+
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+select.field{appearance:auto}
+.btn:disabled{opacity:.45;cursor:default}
