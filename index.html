@@ -3,16 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>مستحقات العمالة</title>
+<title>مستحقات العمالة | رخاء للاستثمارات</title>
+<meta name="theme-color" content="#0F5A41">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
 <div id="bk" aria-hidden="true"></div>
 
-<div id="gate"><div class="wrap">
+<div id="gate">
+<div class="brandbar"><div class="wrap"><small>RAKHAA INVESTMENTS</small><b>رخاء للاستثمارات</b></div></div>
+<div class="wrap">
 <h1>مستحقات العمالة</h1>
 <p>اكتب اسمك، وبعدين اختار القسم اللي عايز تشوفه. كل قسم ليه لوحة لوحده.</p>
 <input id="nm" class="field" placeholder="اسمك" autocomplete="name" maxlength="40" aria-label="اسمك">
@@ -47,8 +50,8 @@
 <div id="toast" aria-live="polite"></div>
 <input type="file" id="fi" accept=".xlsx,.xls" hidden>
 
-<script src="data.js"></script>
-<script src="app.js"></script>
-<script src="extras.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/extras.js"></script>
 </body>
 </html>
